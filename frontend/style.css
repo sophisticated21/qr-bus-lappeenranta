@@ -1,0 +1,6 @@
+body{font-family:sans-serif;margin:1rem;background:#fafafa;color:#222}
+h2{font-size:1.4rem;margin-bottom:0.3rem}
+ul{list-style:none;padding:0}
+li{padding:0.2rem 0;font-size:1.1rem}
+.live{color:#008000}   /* ⚡ */
+.plan{color:#666}

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QRBus – Stop Info</title>
+  <style>
+    body{font-family:sans-serif;margin:1rem;background:#fafafa;color:#222}
+    h2{font-size:1.4rem;margin-bottom:0.5rem;text-align:center}
+    #times{list-style:none;padding:0;margin:0;max-width:620px;margin-inline:auto}
+    #times li{display:grid;grid-template-columns:4rem 1fr auto;gap:.5rem;padding:.35rem 0;border-bottom:1px dotted #ccc;font-size:1.05rem}
+    #times .line{font-weight:600;text-align:right}
+    #times .mins{font-variant-numeric:tabular-nums;font-weight:600}
+    #times li.live .mins{color:#007500}
+    #map{height:300px;max-width:620px;margin:1.2rem auto;border:1px solid #ccc;border-radius:4px}
+  </style>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+</head>
+<body>
+  <h2 id="stopName">Loading…</h2>
+  <ul id="times"></ul>
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script>
+  /* -------------------- configuration -------------------- */
+  const params   = new URLSearchParams(location.search);
+  const stopId   = params.get('id') || 'Lappeenranta:205390';
+  const dev      = location.hostname==='localhost'||location.hostname==='127.0.0.1';
+  const apiRoot  = dev? 'http://127.0.0.1:5000' : location.origin;
+
+  /* mapping shortName → route gtfsId (city lines) */
+  const routeMap = { '1':'Lappeenranta:1','1X':'Lappeenranta:1X','2':'Lappeenranta:2','3':'Lappeenranta:3','4':'Lappeenranta:4','5':'Lappeenranta:5','6':'Lappeenranta:6','7':'Lappeenranta:7','8':'Lappeenranta:8' };
+
+  /* -------------------- helpers -------------------------- */
+  const norm = t=>t.normalize('NFD').replace(/\p{Diacritic}/gu,'').toLowerCase();
+  const isCity = s=>/^([1-8][A-Za-z]?)$/.test(s||'');
+
+  /* -------------------- map ------------------------------ */
+  const map = L.map('map').setView([61.0652,28.095],14);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  let busMarker=null, routeLine=null;
+
+  /* -------------------- main ----------------------------- */
+  async function loadStop(){
+    const res = await fetch(`${apiRoot}/api/stop/${encodeURIComponent(stopId)}`);
+    if(!res.ok){console.error('stop fetch',res.status);return;}
+    const data = await res.json();
+    document.getElementById('stopName').textContent = data.name;
+    if(data.lat&&data.lon) map.setView([data.lat,data.lon],14);
+
+    const keyWord = norm(data.name.split(/[- ]/).pop());
+    const now = Date.now()/1000;
+    const list = [];
+    const firstLineForMap = {value:null};
+
+    data.stoptimesWithoutPatterns.forEach(st=>{
+      const sn = st.trip.route.shortName;
+      if(!isCity(sn)) return;
+      const head= st.trip.tripHeadsign||'';
+      if(norm(head).includes(keyWord)) return; // arrival rows
+
+      const arrSec = st.realtime? st.realtimeArrival: st.scheduledArrival;
+      const mins = Math.floor((st.serviceDay+arrSec-now)/60);
+      if(mins<0||mins>120) return;
+
+      list.push({sn,head,mins,live:st.realtime});
+      if(!firstLineForMap.value) firstLineForMap.value = sn;
+    });
+    list.sort((a,b)=>a.mins-b.mins);
+
+    renderList(list);
+    // if(firstLineForMap.value) drawRoute(firstLineForMap.value);
+    if(list[0]) updateVehicle(list[0].sn);
+  }
+
+  function renderList(arr){
+    const ul=document.getElementById('times');
+    ul.innerHTML='';
+    /* group by line+headsign */
+    const grouped={};
+    arr.forEach(v=>{const k=v.sn+'|'+v.head;(grouped[k]=grouped[k]||[]).push(v);});
+    Object.values(grouped).forEach(gs=>{
+      gs.sort((a,b)=>a.mins-b.mins);
+      const first=gs[0];
+      const minsText=gs.slice(0,3).map(x=>`${x.mins}${x.live?'⚡':''}`).join(', ');
+      const li=document.createElement('li');
+      li.className= first.live?'live':'plan';
+      li.innerHTML=`<span class="line">${first.sn}</span><span class="dest">${first.head}</span><span class="mins">${minsText}</span>`;
+      ul.appendChild(li);
+    });
+  }
+
+  async function updateVehicle(sn){
+    const routeId = routeMap[sn];
+    if(!routeId) return;
+    const res= await fetch(`${apiRoot}/api/route/${routeId}/vehicles`);
+    if(!res.ok) return;
+    const list= await res.json();
+    if(!list.length) return;
+    const v=list[0];
+    if(!busMarker) busMarker=L.marker([v.lat,v.lon]).addTo(map);
+    else busMarker.setLatLng([v.lat,v.lon]);
+  }
+
+async function drawRoute(sn){
+  const routeId = routeMap[sn];
+  if(!routeId || routeLine) return;          // only once
+
+  /* 1. get geometry */
+  const q = `{ route(id:"${routeId}") { patterns(first:1)
+              { patternGeometry { points } } } }`;
+  const geoRes = await fetch(`${apiRoot}/api/rawgql`,
+                {method:'POST',headers:{'Content-Type':'application/json'},
+                 body:JSON.stringify({query:q})});
+  if(!geoRes.ok) return;
+  const poly = (await geoRes.json())
+               ?.data?.route?.patterns[0]?.patternGeometry?.points;
+  if(poly){
+    const coords = decodePolyline(poly);
+    routeLine = L.polyline(coords,{weight:4,color:'#2878ff'}).addTo(map);
+  }
+
+  /* 2. get stops for click markers */
+  const stopRes = await fetch(`${apiRoot}/api/route/${routeId}/stops`);
+  if(stopRes.ok){
+    const stops = await stopRes.json();
+    stops.forEach(s=>{
+      L.circleMarker([s.lat, s.lon], {radius:4, weight:1, color:'#2878ff'})
+        .addTo(map)
+        .bindPopup(s.name);
+    });
+  }
+}
+
+  /* very small polyline decoder (Google encoded polyline) */
+  function decodePolyline(str){
+    let i=0,lat=0,lng=0,coords=[];
+    while(i<str.length){
+      let b,shift=0,result=0;
+      do{b=str.charCodeAt(i++)-63;result|=(b&0x1f)<<shift;shift+=5;}while(b>=0x20);
+      let dlat=((result&1)?~(result>>1):(result>>1));lat+=dlat;
+      shift=0;result=0;
+      do{b=str.charCodeAt(i++)-63;result|=(b&0x1f)<<shift;shift+=5;}while(b>=0x20);
+      let dlng=((result&1)?~(result>>1):(result>>1));lng+=dlng;
+      coords.push([lat*1e-5,lng*1e-5]);
+    }
+    return coords;
+  }
+
+  loadStop();
+  setInterval(loadStop,30000);
+
+  </script>
+</body>
+</html>
