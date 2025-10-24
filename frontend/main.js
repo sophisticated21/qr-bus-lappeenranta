@@ -15,12 +15,45 @@ const routeMap = {
   "1": "Lappeenranta:1",
   "1X": "Lappeenranta:1X",
   "2": "Lappeenranta:2",
+  "2H": "Lappeenranta:2H",
   "3": "Lappeenranta:3",
+  "3K": "Lappeenranta:3K",
   "4": "Lappeenranta:4",
   "5": "Lappeenranta:5",
-  "6": "Lappeenranta:6",
   "7": "Lappeenranta:7",
-  "8": "Lappeenranta:8"
+  "8": "Lappeenranta:8",
+  "12": "Lappeenranta:12",
+  "14": "Lappeenranta:14",
+  "21": "Lappeenranta:21",
+  "22": "Lappeenranta:22",
+  "23": "Lappeenranta:23",
+  "24": "Lappeenranta:24",
+  "25": "Lappeenranta:25",
+  "100": "Lappeenranta:100",
+  "101": "Lappeenranta:101",
+  "110": "Lappeenranta:110",
+  "111": "Lappeenranta:111",
+  "112": "Lappeenranta:112",
+  "113": "Lappeenranta:113",
+  "114": "Lappeenranta:114",
+  "120": "Lappeenranta:120",
+  "121": "Lappeenranta:121",
+  "130": "Lappeenranta:130",
+  "200": "Lappeenranta:200",
+  "201": "Lappeenranta:201",
+  "300": "Lappeenranta:300",
+  "301": "Lappeenranta:301",
+  "500": "Lappeenranta:500",
+  "601": "Lappeenranta:601",
+  "602": "Lappeenranta:602",
+  "603": "Lappeenranta:603",
+  "604": "Lappeenranta:604",
+  "610": "Lappeenranta:610",
+  "620": "Lappeenranta:620",
+  "1001": "Lappeenranta:1001",
+  "1003": "Lappeenranta:1003",
+  "1011": "Lappeenranta:1011",
+  "1012": "Lappeenranta:1012"
 };
 
 /* --------------- helpers ------------------------ */
@@ -53,21 +86,27 @@ async function loadStop() {
     stopNameEl.textContent = data.name;
     if (data.lat && data.lon) map.setView([data.lat, data.lon], 14);
 
-    const coreWord = norm(data.name).split(/[- ]/).pop();   // e.g. "yliopisto"
-
+    const stopNorm = norm(data.name);  // e.g. lut-yliopisto → "yliopisto"
+    const now = Math.floor(Date.now() / 1000);
     const list = [];
     const liveLines = new Set();
-    const now = Math.floor(Date.now() / 1000);
 
     data.stoptimesWithoutPatterns.forEach(st => {
       const sn   = st.trip.route.shortName;
       const head = st.trip.tripHeadsign || "";
-      if (!isCityLine(sn)) return;                          // filter lines
-      if (norm(head).includes(coreWord)) return;            // arrival row
+      const headNorm = norm(head);
+
+      if (!isCityLine(sn)) return;
+
+      // yön filtreleme: geliş yönündeki araçları atla
+      if (
+        (stopNorm.includes("yliopisto") && headNorm.includes("yliopisto")) ||
+        (stopNorm.includes("matkakeskus") && headNorm.includes("matkakeskus"))
+      ) return;
 
       const arrSec = st.realtime ? st.realtimeArrival : st.scheduledArrival;
       const mins   = Math.floor((st.serviceDay + arrSec - now) / 60);
-      if (mins < 0 || mins > 120) return;                   // keep 0-120 min
+      if (mins < 0 || mins > 120) return;
 
       list.push({ line: sn, head, mins, live: st.realtime });
       liveLines.add(sn);
@@ -76,7 +115,7 @@ async function loadStop() {
     list.sort((a, b) => a.mins - b.mins);
     renderList(list);
 
-    /* update vehicle pin for first line (if mapping exists) */
+    // araç pinini haritada göster
     const firstLine = list[0]?.line;
     if (firstLine && routeMap[firstLine]) loadVehicles(routeMap[firstLine]);
   } catch (err) {
@@ -102,7 +141,7 @@ async function loadVehicles(routeId) {
     const list = await res.json();
     if (!list.length) return;
 
-    const v = list[0];                       // first vehicle for now
+    const v = list[0];  // ilk aracı göster
     if (!busPin)
       busPin = L.marker([v.lat, v.lon]).addTo(map);
     else
@@ -113,5 +152,5 @@ async function loadVehicles(routeId) {
 }
 
 /* --------------- start ------------------------- */
-loadStop();               // first run
-setInterval(loadStop, 30000);   // refresh every 30 s
+loadStop();
+setInterval(loadStop, 30000);  // her 30 sn'de bir güncelle

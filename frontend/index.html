@@ -60,7 +60,8 @@ async function load(){
   for(const [k,arr] of Object.entries(groups)){
     arr.sort((a,b)=>a.stopPositionInPattern-b.stopPositionInPattern||a.mins-b.mins);
     const f=arr[0];
-    const minsText=arr.slice(0,3).map(x=>`${x.mins}${x.realtime?'⚡':''}`).join(', ');
+    const minsText = arr.slice(0, 3).map(x => {const isLive = x.realtime || (x.realtimeArrival !== x.scheduledArrival);
+    const icon = isLive ? '⚡' : '⏰';return `${x.mins} ${icon}`;}).join(', ');
     const li=document.createElement('li');li.className='route'+(f.realtime?' live':'');
     li.innerHTML=`<span class="line">${f.trip.route.shortName}</span><span class="dest">${f.trip.tripHeadsign}</span><span class="mins">${minsText}</span>`;
     board.appendChild(li);

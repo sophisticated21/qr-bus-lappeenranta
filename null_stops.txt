@@ -1,0 +1,1083 @@
+100,Koskenkoulu
+30547,Imatran keskusliikenneasema L
+81643,Nuijamaantie 161
+81644,Nuijamaantie 169
+81647,Nuijamaantie 327
+81648,Nuijamaantie 336
+81649,Nuijamaantie 471
+81650,Nuijamaantie 484
+81651,Nuijamaantie 542
+81653,Nuijamaantie 597
+81654,Nuijamaantie 603
+81655,Nuijamaantie 669
+81656,Nuijamaantie 677
+81657,Nuijamaantie 749
+81658,Nuijamaantie 761
+81659,Nuijamaantie 834
+81660,Nuijamaantie 842
+81662,Nuijamaantie 991
+81663,Nuijamaantie 1154
+81664,Nuijamaantie 1284
+81665,Nuijamaantie 1259
+81666,Nuijamaantie 1522
+81667,Nuijamaantie 1532
+81668,Nuijamaantie 1592
+81669,Nuijamaantie 1597
+81672,Rajatie 85
+81673,Rajatie 181
+81674,Rajatie 181
+83236,Lemintie 14
+83237,Lemintie 60
+83238,Lemintie 70
+83239,Lemintie 150
+83306,Vaalimaantie 205
+83307,Vaalimaantie 212
+83308,Vaalimaantie 307
+83309,Vaalimaantie 319
+83310,Vaalimaantie 385
+83311,Vaalimaantie 392
+83312,Vaalimaantie 431
+83313,Vaalimaantie 441
+83314,Vaalimaantie 529
+83315,Vaalimaantie 537
+83316,Vaalimaantie 668
+83317,Vaalimaantie 680
+83318,Vaalimaantie 766
+83319,Vaalimaantie 815
+83320,Vaalimaantie 825
+83321,Vaalimaantie 845
+83322,Vaalimaantie 859
+83323,Vaalimaantie 925
+83324,Vaalimaantie 937
+83325,Vaalimaantie 1025
+83326,Vaalimaantie 1040
+83327,Vaalimaantie 1121
+83328,Vaalimaantie 1132
+83329,Vaalimaantie 1388
+83330,Vaalimaantie 1396
+83331,Vaalimaantie 1455
+83332,Vaalimaantie 1471
+83333,Vaalimaantie 1515
+83334,Vaalimaantie 1523
+83335,Vaalimaantie 1605
+83336,Vaalimaantie 1624
+83337,Vaalimaantie 1767
+83338,Vaalimaantie 1773
+83339,Vaalimaantie 1898
+83340,Vaalimaantie 1907
+83341,Vaalimaantie 2125
+83342,Vaalimaantie 2133
+83343,Vaalimaantie 2355
+83344,Vaalimaantie 2363
+83345,Vaalimaantie 2491
+83346,Vaalimaantie 2496
+83347,Vaalimaantie 2683
+83348,Vaalimaantie 2693
+83349,Vaalimaantie 3031
+83350,Vaalimaantie 3039
+83351,Vaalimaantie 3190
+83352,Vaalimaantie 3204
+83354,Vaalimaantie 3265
+83355,Vaalimaantie 3416
+83356,Vaalimaantie 3427
+83358,Vaalimaantie 3827
+83359,Vaalimaantie 3955
+83360,Vaalimaantie 3966
+83361,Vaalimaantie 4063
+83362,Vaalimaantie 4079
+83363,Vaalimaantie 4182
+83364,Vaalimaantie 4193
+83365,Vaalimaantie 4262
+83366,Vaalimaantie 4271
+83367,Vaalimaantie 4295
+83397,Vanha Viipurintie 150
+83398,Vanha Viipurintie 170
+83399,Vanha Viipurintie 212
+83400,Vanha Viipurintie 214
+83401,Vanha Viipurintie 256
+83402,Vanha Viipurintie 264
+83403,Vanha Viipurintie 339
+83404,Vanha Viipurintie 348
+83405,Vanha Viipurintie 437
+83406,Vanha Viipurintie 429
+83407,Vanha Viipurintie 493
+83408,Vanha Viipurintie 484
+83409,Vanha Viipurintie 524
+83410,Vanha Viipurintie 535
+83411,Vanha Viipurintie 719
+83412,Vanha Viipurintie 727
+83413,Vanha Viipurintie 778
+83414,Vanha Viipurintie 785
+83415,Vanha Viipurintie 883
+83417,Vanha Viipurintie 948
+83418,Vanha Viipurintie 951
+83419,Vanha Viipurintie 1113
+83420,Vainikkalantie 19
+83421,Vainikkalantie 57
+83422,Vainikkalantie 67
+83423,Vainikkalantie 104
+83424,Vainikkalantie 111
+83425,Vainikkalantie 168
+83426,Vainikkalantie 181
+83427,Vainikkalantie 213
+83428,Vainikkalantie 228
+83429,Vainikkalantie 284
+83430,Vainikkalantie 296
+83431,Vainikkalantie 545
+83432,Vainikkalantie 556
+83433,Vainikkalantie 590
+83434,Vainikkalantie 600
+83435,Vainikkalantie 628
+83437,Vainikkalantie 683
+83438,Vainikkalantie 700
+83439,Vainikkalantie 735
+83440,Vainikkalantie 759
+83441,Vainikkalantie 777
+83442,Vainikkalantie 855
+83443,Vainikkalantie 872
+83444,Vainikkalantie 923
+83445,Vainikkalantie 937
+83446,Vainikkalantie 1044
+83447,Vainikkalantie 1053
+83448,Vainikkalantie 1197
+83449,Vainikkalantie 1205
+83450,Vainikkalantie 1237
+83451,Vainikkalantie 1251
+83452,Vainikkalantie 1481
+83453,Vainikkalantie 1490
+83454,Vainikkalantie 1539 I
+83455,Vainikkalantie 1539 L
+83460,Imatranväylä 53
+83461,Imatranväylä 64
+83462,Imatranväylä 107
+83463,Imatranväylä 114
+111111,Huhtasen koulu
+133963,Helsingintie P
+133964,Helsingintie E
+133967,Karjalantie 89
+133968,Karjalantie 89
+133982,Ylämaantie 341
+133983,Ylämaantie 347
+133984,Ylämaantie 805
+133985,Ylämaantie 807
+133986,Ylämaantie 2169
+133987,Ylämaantie 2396
+133988,Ylämaantie 2492
+133989,Ylämaantie 2498
+133990,Pentintie th P
+133991,Pentintie th E
+133992,Ylämaantie 2968
+133993,Ylämaantie 3005
+133994,Ylämaantie 3016
+133995,Koskenkylä P
+133996,Koskenkylä E
+133997,Rikkiläntie 1281
+133998,Rikkiläntie 1276
+133999,Rikkiläntie 1219
+134000,Rikkiläntie 1218
+134001,Rikkiläntie 31
+134002,Rikkiläntie 51
+134003,Rikkiläntie 108
+134006,Rikkiläntie 159
+134007,Ruohiantie 278
+134011,Joutsenontie 50
+134012,Joutsenontie 55
+134013,Joutsenontie 360
+134014,Joutsenontie 368
+134015,Joutsenontie 568
+134016,Joutsenontie 577
+134017,Joutsenontie 728
+134018,Joutsenontie 732
+134019,Joutsenontie 834
+134022,Saimaantie 14
+134023,Saimaantie 14
+134024,Penttiläntie 13, Joutsenon koulukeskus
+134025,Penttiläntie 26 P
+134026,Penttiläntie 26 E
+134027,Penttiläntie 141
+134028,Penttiläntie 158
+134029,Penttiläntie 369
+134030,Penttiläntie 369
+134031,Penttiläntie 433
+134032,Penttiläntie 438
+134033,Penttiläntie 520
+134034,Penttiläntie 529
+134035,Penttiläntie 653
+134036,Penttiläntie 656
+134037,Saimaantie 36
+134038,Saimaantie 62
+134039,Saimaantie 64
+134040,Putkinotkontie 25 E
+134041,Putkinotkontie 25 P
+134043,Viipurintie 330
+134047,Viipurintie 662
+134055,Vallinkoski 171
+134066,Asematie 2
+134067,Asematie 9
+134068,Asematie 9
+134074,Rauhantie 58
+134075,Rauhantie 68
+134076,Rauhantie 41
+134077,Rauhantie 84
+134078,Tiuruniementie 36
+134079,Tiuruniementie 46
+134081,Tiuruniementie 94
+134082,Niskapietiläntie 105 P
+134083,Niskapietiläntie 104 E
+134084,Kuusela P
+134085,Kuusela E
+134086,Niskapietiläntie 110 P
+135173,Merenlahdentie 228
+135174,Tilsalankatu th I
+135175,Tilsalankatu th L
+135196,Pajarilantie 118
+135197,Pajarilantie 178
+135198,Pajarilantie 181
+135199,Pajarilantie 306
+135200,Pajarilantie 309
+135201,Pajarilantie 395
+135202,Pajarilantie 453
+135203,Pajarilantie 457
+135204,Pajarilantie 520
+135210,Utrasaarentie 50
+135211,Utrasaarentie 92
+135212,Utrasaarentie 98
+135213,Utrasaarentie 130
+135214,Utrasaarentie 135
+135215,Utrasaarentie 174
+135216,Utrasaarentie 174
+135217,Muukonniemi
+135219,Kaarnantie 20
+135220,Kaarnantie 28
+135221,Kaarnantie 85
+135222,Kaarnantie 88
+135223,Kaarnantie 113
+135224,Kaarnantie 121
+135225,Kaarnantie 143
+135226,Kaarnantie 144
+135227,Kaarnantie 191
+135228,Kaarnantie 197
+135229,Kaarnantie 223
+135230,Kaarnantie 231
+135231,Kaarnantie 277
+135232,Kaarnantie 283
+135233,Kaarnantie 300
+135234,Kaarnantie 442
+135235,Kaarnantie 446
+135240,Ilottulantie 225
+135241,Ilottulantie 228
+135242,Ilottulantie 276
+135243,Ilottulantie 282
+135244,Ilottulantie 340
+135245,Ilottulantie 339
+135246,Ilottulantie 428
+135247,Ilottulantie 459
+135248,Ilottulantie 430
+135249,Ilottulantie 461
+135250,Haukilahdentie 619
+135251,Haukilahdentie 614
+135252,Haukilahdentie 538
+135253,Haukilahdentie 533
+135254,Haukilahdentie 501
+135255,Haukilahdentie 494
+135256,Haukilahdentie 479
+135257,Haukilahdentie 475
+135258,Haukilahdentie 422
+135259,Haukilahdentie 419
+135260,Haukilahdentie 378 L
+135261,Haukilahdentie 378 I
+135262,Haukilahdentie 108
+135263,Haukilahdentie 47
+135264,Haukilahdentie 82
+135265,Haukilahdentie 39
+135266,Haukilahdentie 46
+135267,Haukilahdentie 46
+135268,Haukilahdentie 40
+135269,Haukilahdentie 37
+135270,Teollisuustie th L
+135271,Teollisuustie th I
+135272,Honkalahdentie th E
+135273,Haukilahdentie 18
+135274,Konnuntie 589
+135275,Pulp P
+135276,Silmukuja th E
+135277,Silmukuja th P
+135278,Uus-Ahvenlammentie th E
+135279,Vanha-ahvenlammentie th P
+135280,Ahvenlammentie 28
+135281,Ahvenlammentie 26
+135282,Ahvenlammentie/Kuutostie P
+135283,Karjalaisentie 9
+135284,Messutie th P
+135285,Messutie th E
+135286,Lappeentie 2 I
+135287,Lappeentie 2 L
+135288,Lappeentie 46 I
+135289,Lappeentie 46 L
+135290,Lappeentie 9
+135291,Taimitarhantie th I
+135292,Taimitarhantie th L
+135293,Kastarintie th I
+135294,Kastarintie th E
+135295,Lappeentie 302
+135296,Lappeentie 309
+135300,Rantatie 122
+135301,Rantatie 136
+135302,Rantatie 231
+135303,Rantatie 238
+135304,Rantatie 330
+135305,Rantatie 335
+135306,Rantatie 453
+135307,Rantatie 457
+135308,Rantatie 530
+135309,Rantatie 541
+135310,Rantatie 590
+135311,Rantatie 598
+135312,Rantatie 643
+135313,Rantatie 651
+135314,Rantatie 710
+135315,Rantatie 715
+135316,Rantatie 768
+135317,Rantatie 774
+135319,Aholantie 609
+135320,Aholantie 626
+135321,Aholantie 664
+135322,Aholantie 671
+135323,Aholantie 730
+135324,Aholantie 738
+135325,Aholantie 800
+135326,Aholantie 812
+135327,Aholantie 840
+154362,Navetanmutka
+154363,Navetanmutka
+154364,Vuoksenniskantie 90
+154366,Paperharjuntie 57
+154367,Paperharjuntie 57
+154368,Paperharjuntie 43
+154371,Paperharjuntie 1
+154372,Paperharjuntie 1
+154373,Tainionkosken koulu
+154374,Tainionkosken koulu
+154375,Ritikanranta P
+154376,Ritikanranta E
+154378,Keskuskatu-Ritvankuja
+154379,Keskuskatu-Ritvankuja
+154380,Korvenkannantie 18
+154381,Korvenkannantie 18
+154382,Saareksiinmäki I
+154383,Saareksiinmäki L
+154386,Veteraanitalo
+154387,Veteraanitalo
+154388,Ensontie 55
+154389,Ensontie 55
+154390,Kaukopäänkatu
+154391,Kaukopäänkatu
+154392,Teppanala
+154393,Teppanala
+154394,Imatrankoskentie 20
+154397,Huminan mutka
+154398,Kaukopäänkatu 6
+154399,Vuoksenniskantie 97
+154400,Vuoksenniska P
+154401,Vuoksenniska E
+154402,Torikatu 1
+154403,Torikatu 1
+154404,Vuoksenniskantie 48 P
+154405,Vuoksenniskantie 48 E
+154406,Lakasenpelto
+154407,Lakasenpelto
+154408,Mäntyrinne
+154410,Mäntyrinne
+154411,Vuoksenniskantie 31
+154412,Vuoksenniskantie 31
+154413,Keskuskatu-Karhumäenkatu
+154416,Joutsenonkatu 45
+154417,Joutsenonkatu 45
+154418,Paperharjuntie 4 P
+154419,Paperharjuntie 4 E
+154420,Joutsenonkatu 24
+154421,Joutsenonkatu 27
+154422,Joutsenonkatu 5
+154423,Joutsenonkatu 5
+154427,Korvenkannantie 38 P
+154428,Korvenkannantie 38 E
+154429,Ensontie 391
+154430,Ensontie 391
+154431,Kartanonkatu 10
+154432,Sotkulammentie 21
+154437,Sotkulammentie 37
+154438,Sotkulampi
+154439,Imatrankoskentie 23
+154440,Imatrankoskentie 29
+154441,Imatrankoskentie 29
+154444,Imatran kylpylä
+154445,Lammassaarentie 5
+154446,Lammassaarentie 5
+154447,Ukonniemi
+154450,Jäähalli E
+154451,Mehiläismäki
+154452,Mehiläismäki
+154453,Linnansuontie
+154454,Linnansuontie
+154455,Savikannantie 199
+154456,Tainionkoskentie 113
+154458,Saimaantie
+154459,Tainionkoskentie 113
+154460,Saimaantie 19
+154461,Saimaantie 19
+154462,Saimaantie 31
+154463,Saimaantie 31
+154466,Savikannantie 33
+154467,Savikannantie 33
+154468,Imatran kaupungintalo P
+154469,Imatran uimahalli P
+154470,Mansikkalan koulukeskus P
+154471,Mansikkalan koulukeskus E
+154472,Huhtanen
+154473,Niskapietiläntie 97
+154474,Niskapietiläntie 97
+154475,Pistetalot P
+154476,Pistetalot E
+154479,Koulukatu 54
+154480,Koulukatu 54
+154482,Lappeentie 25 E
+154484,Esterinkatu 21
+154485,Heikinkatu 7
+154486,Heikinkatu 7
+154487,Imatrankoski L
+154488,Imatrankoski I
+154489,Tainionkoskentie 16 P
+154490,Tainionkoskentie 16 E
+154491,Viipurintie 3
+154492,Viipurintie 3
+154493,Viipurintie 20
+154494,Viipurintie 20
+154495,Viipurintie 36
+154496,Viipurintie 36
+154498,Niskapietiläntie 92
+154499,Niskapietiläntie 88
+154500,Niskapietiläntie 74
+154501,Niskapietiläntie 74
+154502,Niskapietiläntie 49
+154503,Niskapietiläntie 49
+154504,Niskapietiläntie 39
+154505,Niskapietiläntie 41
+154506,Karjalantie 577
+154508,Viipurintie 54 P
+154509,Viipurintie 54 E
+154510,Meltola
+154511,Meltola E
+154512,Meltolan koulu
+154515,Viipurintie 88
+154516,Viipurintie 84 P
+154522,Pakkaskatu
+154523,Vuoksenniskantie 7
+154525,Sulattimo
+154526,Sulattimo
+154531,Kolmen ristin kirkko
+154532,Kolmen ristin kirkko
+154535,Niskapietiläntie 16
+154536,Niskapietiläntie 16
+154537,Rautio
+154538,Raution päiväkoti
+154543,Ensontie 337
+154544,Ensontie 337
+154545,Viipurintie 118
+154546,Viipurintie 112
+154549,Tiehaaranmäki P
+154550,Tiehaaranmäki
+154551,Vuoksenniskan koulukeskus P
+154552,Vuokseniskan koulukeskus E
+154553,Vuoksenniskantie 19
+154554,Tornansilta
+154555,Harakka
+154556,Harakka
+154557,Vuoksenniskantie 19
+154558,Liekokatu 9
+154559,Liekokatu 9
+154560,Rouskunkatu 3
+154561,Rouskunkatu 3
+154562,Sienimäenkatu 7
+154564,Liekokatu 2
+154565,Liekokatu 2
+154566,Ensontie 27
+154567,Rajapatsas
+154577,Lammassaarentie 2
+154578,Niskapietiläntie 33
+154579,Niskapietiläntie 33
+154581,Upseerikerho
+154582,Upseerikerho
+154585,Keskuskeittiö
+154586,Keskuskatu-Irmankatu
+154587,Keskuskatu-Muovikuja
+154589,Koulukatu 35
+154590,Koulukatu 31
+154591,Paajala
+154592,Paajala
+154593,Karjalantie 577
+154602,Imatran uimahalli E
+154603,Sotkulammentie 19
+154605,Joutsenonkatu 48
+154606,Joutsenonkatu 48
+154607,Virasoja
+154608,Virasoja
+154610,Savikannantie 128
+154611,Savikannantie 128
+154612,Ensontie 279
+154613,Ensontie 279
+171562,Vanha Viipurintie 998
+171563,Vanha Viipurintie 1009
+183097,Jakola
+187326,Ilottulantie 22
+187327,Ilottulantie 75
+187328,Ilottulantie 82
+187329,Ilottulantie 119
+187382,Ilottulantie 123
+188290,Kuutostie 2598
+188292,Kuutostie 2619
+188294,Kuutostie 2783
+188296,Kuutostie 2816
+188491,Lemi th E
+190323,Kuutostie ramppi Lampikangas I
+205143,Armilankatu 30 keskustaan
+205144,Armilankatu 30 keskustasta
+205145,Armilankatu 38 keskustaan
+205146,Armilankatu 38 keskustasta
+205147,Armilankatu 46 keskustaan
+205148,Armilankatu 46 keskustasta
+205149,Lauritsala E
+205150,Lauritsala P
+205151,Eteläkatu keskustasta
+205153,Hakalinkatu 11 keskustasta
+205154,Hakalinkatu 28a keskustaan
+205155,Hakalinkatu 37 keskustasta
+205156,Hakalinkatu 8 keskustaan
+205157,Hakalintie-Kartanontie keskustaan
+205158,Hallituskatu 1 keskustasta
+205159,Hallituskatu 15 keskustasta
+205160,Hallituskatu 2 keskustaan
+205161,Hallituskatu 24 keskustaan
+205162,Hallituskatu 35 keskustasta
+205163,Hallituskatu 41 keskustasta
+205164,Hallituskatu 42 keskustaan
+205165,Hallituskatu keskustaan
+205166,Hallituskatu-Itsenäisyydenkatu keskustaan
+205167,Hallituskatu-Itsenäisyydenkatu keskustasta
+205168,Harapaisentie 25 P
+205170,Harapaisentie 9 P
+205172,Helsingintie-Huhtiniemi keskustaan
+205173,Helsingintie-Huhtiniemi keskustasta
+205174,Helsingintie-Kourula keskustaan
+205175,Helsingintie-Kourula keskustasta
+205176,Helsingintie-Lavolankatu keskustaan
+205177,Helsingintie-Lavolankatu keskustasta
+205178,Helsingintie-leirintäalue keskustaan
+205179,Helsingintie-leirintäalue keskustasta
+205180,Helsingintie-Merenlahdentie keskustasta
+205181,Helsingintie-Puolakatu keskustaan
+205182,Helsingintie-Puolakatu keskustasta
+205183,Helsingintie-Skinnarilankatu keskustaan
+205184,Hiessillankatu 3 keskustaan
+205185,Hiessillankatu 5 keskustaan
+205186,Hiessillankatu 6 keskustasta
+205187,Kivisalmi
+205188,Hovinkatu keskustaan
+205189,Hovinkatu-Isopällinkatu keskustaan
+205190,Hovinkatu-Isopällinkatu keskustasta
+205191,Hovinkatu-Tuohimäenkatu keskustaan
+205192,Hovinkatu-Tuohimäenkatu keskustasta
+205193,Wäinönkatu L
+205194,Huhtiniemenkatu 6 keskustasta
+205195,Imatrantie I
+205196,Imatrantie L
+205197,Imatrantie-Kaukaankatu keskustaan
+205198,Keskussairaala L
+205199,Keskussairaala I
+205200,Isopällinkatu 15 keskustasta
+205201,Itäinen Kanavatie 2 keskustaan
+205202,Itäinen Kanavatie-Mastokatu keskustasta
+205203,Itäinen Kanavatie-Messikatu keskustaan
+205204,Itäinen Kanavatie-Messikatu keskustasta
+205205,Joukahaisenkatu 35 keskustasta
+205206,Joukahaisenkatu 44 keskustaan
+205207,Joukahaisenkatu 57 keskustasta
+205208,Joukahaisenkatu 64 keskustaan
+205209,Joukahaisenkatu 71 keskustasta
+205210,Joukahaisenkatu 78 keskustaan
+205211,Jupiterinkatu 7 keskustasta
+205212,Jupiterinkatu-Jalopeurankatu keskustaan
+205214,Kalevankatu 1 keskustasta
+205215,Kalevankatu 23 keskustasta
+205216,Kalevankatu 24 keskustaan
+205217,Kalevankatu 44 keskustaan
+205218,Kalevankatu 44 keskustasta
+205219,Karhuvuorenkatu 17 keskustaan
+205220,Karhuvuorenkatu 19 keskustaan
+205221,Karhuvuori
+205222,Karhuvuorenkatu keskustaan
+205223,Karhuvuorenkatu-Kaarelankatu keskustaan
+205224,Karhuvuorenkatu-Pellavakatu keskustaan
+205225,Karjalantie 2 keskustasta
+205226,Karjalantie 7 keskustaan
+205227,Karjalantie 25 keskustaan
+205228,Karjalantie I
+205229,Karjalantie 25 keskustasta
+205230,Karjalantie L
+205231,Kartanontie keskustasta
+205232,Kaukaankatu 19a keskustasta
+205233,Kaukaankatu 20-22 keskustaan
+205234,Kauppakatu 58-60 keskustaan
+205235,Kauppakatu 67 keskustasta
+205236,Kauppakatu 72 keskustaan
+205237,Kauppakatu 73 keskustasta
+205238,Kivisalmenkatu keskustaan
+205239,Kivistönkatu
+205240,Kivistönkatu 2 keskustasta
+205241,Pilotinkatu I
+205242,Pilotinkatu L
+205244,Kornetinkatu 4 keskustasta
+205245,Korpikunnaankatu 1 keskustasta
+205246,Keskusta L
+205247,Keskusta I
+205249,Armada
+205250,Kurjentie 27 keskustaan
+205251,Kurjentie 28 keskustasta
+205252,Kurjentie 3 keskustaan
+205253,Kurjentie 6 keskustasta
+205254,Kurjentie 67 keskustaan
+205255,Kurjentie 75 keskustaan
+205256,Kuusimäenkatu 18 keskustaan
+205257,Kuusimäenkatu 18 keskustasta
+205258,Kärrinkatu keskustaan
+205259,Kärrinkatu keskustasta
+205260,Lappeenkatu E
+205261,Lappeenkatu P
+205262,Lauritsalantie-Kaukas keskustaan
+205263,Lauritsalantie-Kaukas keskustasta
+205264,Lauritsalantie I
+205265,Lavolankatu 1 keskustaan
+205266,Kesämäki I
+205267,Lavolankatu-Leirikatu keskustasta
+205268,Kesämäki P
+205270,Lavolantie 14 P
+205272,Lavolantie 30 P
+205273,Lavolantie 40 P
+205274,Lentokentäntie 3 keskustaan
+205275,Lentokentäntie 3 keskustasta
+205276,Lentokentäntie 7 keskustaan
+205277,Lentokentäntie 7 keskustasta
+205279,Lentokentäntie keskustasta
+205280,Lentokentäntie-Kesämäenkatu keskustaan
+205281,Lentokentäntie-Kesämäenkatu keskustasta
+205282,Lepolankatu 10 keskustasta
+205283,Lepolankatu 1a keskustaan
+205284,Lepolankatu 34 keskustasta
+205285,Lepolankatu keskustaan
+205286,Luukkaankatu 34 keskustaan
+205287,Luukkaankatu 51 keskustasta
+205288,Maininkikatu 12 keskustaan
+205289,Maininkikatu 13 keskustasta
+205290,Kariniemi
+205293,Kurjentie 58 keskustasta
+205294,Kaakkoiskaari 6 keskustaan
+205295,Kaakkoiskaari 6 keskustasta
+205296,Merenlahdentie 176 L
+205297,Merenlahdentie 2 keskustaan
+205298,Merenlahdentie 20 keskustaan
+205301,Merenlahdentie 33 keskustasta
+205302,Merenlahdentie 38 keskustaan
+205303,Merenlahdentie 38 keskustasta
+205304,Merenlahdentie 67 L
+205305,Merenlahdentie-Helsingintie keskustasta
+205306,Munteronkatu 2
+205307,Mustolankatu 1 keskustasta
+205308,Mutkakatu 11 keskustasta
+205309,Muukontie 19 keskustasta
+205310,Muukontie 22 keskustaan
+205311,Kiiskinmäki
+205312,Muukontie-Hakalinkatu keskustaan
+205313,Muukontie-Hakalinkatu keskustasta
+205314,Muukontie-Itäinen kanavatie keskustaan
+205315,Muukontie-Itäinen kanavatie keskustasta
+205316,Muukontie-Juusteninkatu keskustasta
+205317,Muukontie-Kiilinkatu keskustaan
+205318,Muukontie-Läntinen kanavatie keskustaan
+205319,Muukontie-Läntinen kanavatie keskustasta
+205320,Muukontie-Suolavuorentie keskustaan
+205321,Muukontie-Suolavuorentie keskustasta
+205322,Mäntylä
+205323,Mäntyläntie 4 keskustaan
+205324,Oikokatu I
+205325,Oikokatu L
+205326,Onnelantie 10 keskustaan
+205328,Onnelantie 21 keskustasta
+205329,Onnelantie 24 keskustaan
+205330,Onnelantie 3 keskustasta
+205332,Onnelantie 36 keskustaan
+205333,Onninkatu 19 keskustaan
+205334,Onninkatu 2 keskustaan
+205335,Onninkatu keskustasta
+205336,Onninkatu-Tierankuja keskustasta
+205337,Orioninkatu 1 keskustaan
+205338,Orioninkatu 1 keskustasta
+205339,Orioninkatu 13 keskustasta
+205340,Orioninkatu 8 keskustaan
+205341,Orioninkatu-Kaivosuonkatu keskustaan
+205342,Orioninkatu-Kaivosuonkatu keskustasta
+205343,Hovinpelto
+205344,Piiluvankatu 18 keskustaan
+205345,Piiluvankatu 25 keskustasta
+205346,Piiluvankatu-Kivisalmenkatu keskustaan
+205347,Piiluvankatu-Kivisalmenkatu keskustasta
+205348,Piiluvankatu-Voisalmentie keskustasta
+205349,Pikisaarenkatu 27 keskustasta
+205350,Pikisaarenkatu 31 keskustasta
+205351,Pikisaarenkatu 32 keskustaan
+205353,Pikisaari
+205354,Pilotinkatu P
+205355,Pilotinkatu E
+205356,Pitkäkatu 2 keskustasta
+205357,Pitkäkatu 20 keskustasta
+205358,Mustola
+205359,Puhakankatu 13 keskustaan
+205360,Puhakankatu 3-7 keskustaan
+205361,Puhakankatu 3-7 keskustasta
+205362,Ratakatu 18 keskustasta
+205363,Matkakeskus
+205364,Ratakatu keskustaan
+205365,Ratakatu keskustasta
+205366,Mäntyläntie 10 keskustasta
+205367,Mäntyläntie 4 keskustasta
+205368,Ruoholampi
+205369,Selkäharjunkatu I
+205372,Selkäharjunkatu L
+205373,Sammonlahdenkatu-Kiertokatu keskustaan
+205374,Sammonlahdenkatu-Kiertokatu keskustasta
+205375,Sammonlahdenkatu-Merenlahdentie keskustaan
+205376,Sammonlahdenkatu-Merenlahdentie keskustasta
+205377,Sammonlahdenkatu-Orioninkatu keskustasta
+205379,Saratie 13 keskustasta
+205380,Saratie 7 keskustasta
+205381,Satamatie 30 itään
+205382,Satamatie 30 länteen
+205383,Skinnarilankatu 11 keskustasta
+205384,Skinnarilankatu 14 keskustaan
+205385,Skinnarilankatu 14 keskustasta
+205386,Skinnarilankatu 20 keskustaan
+205387,Skinnarilankatu 20 keskustasta
+205388,Skinnarilankatu 24 keskustaan
+205389,Skinnarilankatu 29 keskustasta
+205390,LUT-Yliopisto
+205391,Skinnarilankatu 6 keskustaan
+205392,Skinnarilankatu keskustaan
+205393,Skinnarilankatu keskustasta
+205394,Skinnarilankatu-Rantaniitynkatu keskustaan
+205395,Skinnarilankatu-Rantaniitynkatu keskustasta
+205396,Snellmaninkatu 2 keskustasta
+205397,Standertskjöldinkatu 1 keskustasta
+205398,Standertskjöldinkatu 10 keskustaan
+205399,Standertskjöldinkatu 2 keskustaan
+205400,Standertskjöldinkatu 1 keskustaan
+205401,Suolavuorentie 12 keskustaan
+205402,Suolavuorentie 15 keskustasta
+205403,Kanavansuu
+205404,Suolavuorentie 6 keskustaan
+205405,Suolavuorentie 6 keskustasta
+205406,Suolavuorentie-Sahurinkatu keskustasta
+205407,Suolavuorentie-Särmääjänkatu keskustaan
+205408,Suonionkatu 12 keskustaan
+205409,Suonionkatu 25 keskustasta
+205410,Suonionkatu 9
+205411,Taipalsaarentie 16 keskustaan
+205412,Taipalsaarentie 16 keskustasta
+205413,Pusupuisto L
+205414,Taipalsaarentie 51 keskustasta
+205415,Pusupuisto I
+205416,Taipalsaarentie-Tyysterniementie
+205417,Teekkarikatu keskustaan
+205418,Teekkarikatu keskustasta
+205419,Teknologiapuistonkatu 1 keskustaan
+205420,Teknologiapuistonkatu 1 keskustasta
+205421,Teknologiapuistonkatu 3 keskustaan
+205422,Teknologiapuistonkatu 3 keskustasta
+205423,Tilsalankatu 25-27 E
+205424,Tilsalankatu-Pakkikatu E
+205425,Tilsalankatu-Vanhapellonkatu E
+205426,Tyysterniementie 11 keskustaan
+205427,Tyysterniementie 3 keskustasta
+205428,Tyysterniementie 11 keskustasta
+205429,Tyysterniementie keskustaan
+205430,Tyysterniementie-Tyysterniemenranta keskustaan
+205431,Tyysterniementie-Tyysterniemenranta keskustasta
+205441,Lyseo I
+205442,Lyseo L
+205443,Valtakatu 70 keskustasta
+205444,Valtakatu 72 keskustaan
+205445,Arboretum L
+205446,Arboretum I
+205457,Voisalmentie 14 keskustaan
+205458,Voisalmentie 19 keskustasta
+205459,Voisalmentie 25 keskustasta
+205460,Voisalmentie 4 keskustaan
+205461,Voisalmentie 8 keskustaan
+205462,Voisalmentie-Kivisalmenkatu keskustasta
+205463,Yhteistyönkatu 3 keskustaan
+205464,Yhteistyönkatu 3 keskustasta
+230515,Nuijamaantie 555
+230589,Rummuntie 409
+230598,Pajarilantie 397
+230600,Utrasaarentie 46
+230601,Kaarnantie 347
+230602,Kaarnantie 352
+230603,Kaarnantie 480
+230604,Kaarnantie 483
+230605,Ilottulantie 26
+230606,Konnuntie 636
+230607,Rantatie 796
+230608,Rantatie 805
+230609,Aholantie 844
+231383,Ylämaantie 2158
+231384,Ylämaantie 2386
+231385,Ylämaantie 2817
+231386,Ylämaantie 2823
+231388,Ylämaantie 2901
+231389,Ylämaantie 2964
+231390,Vaalimaantie 137
+231391,Vaalimaantie 141
+231392,Vaalimaantie 776
+231393,Rikkiläntie 1303
+231394,Rikkiläntie 1296
+231395,Ruohiantie 270
+231396,Ruohiantie 21
+231397,Ruohiantie 16
+231398,Rajatie 95
+231400,Penttiläntie 1072
+231401,Saimaantie 25
+231407,Imatranväylä 12
+231690,Kuutonen 1209
+231698,Kuutonen 1228
+300324,Viipurintie-Toikansuontie keskustaan
+300397,Joutseno linja-autoasema
+300446,Lampikangas vt 6 L
+300460,Rauhantie 36
+300462,Rauhantie 36
+300516,Kiiskinmäki P  Muukontie 57
+300740,Korvenkangas L (Korvenkylä)
+300741,Rauhantie 2
+300865,Kanalammentie 339
+300885,Rikkilä
+300897,Tiuru
+301465,Imatran kaupungintalo E
+301466,Vuoksenrannankatu 27
+301467,Vuoksenrannankatu 28
+301470,Vuoksenrannankatu 7
+304607,Ylijärvi
+306129,Viipurintie keskustasta
+306975,Vuoksenniska Imatra P
+306976,Vuoksenniska Imatra E
+307575,Lentokentäntie
+307577,Ajurinkatu keskustasta
+308248,Jäähalli P
+308262,Keskuskatu-Karhumäenkatu
+308290,Lammassaarentie 2
+308295,Ukonlinna
+308297,Lappeentie 25
+308362,Räikköläntie 252
+308363,Räikköläntie 360
+308364,Räikköläntie 433
+308403,Vallinkoskentie 29
+308405,Vallinkoskentie 165
+308406,Vallinkoskentie 277
+308407,Vallinkoskentie 333
+308425,Viipurintie 431
+308426,Viipurintie 520
+308427,Viipurintie 593
+308429,Viipurintie 754
+308448,Vuoksenrannankatu 7
+308492,Harapaisentie 25 E
+308493,Harapaisentie 9 E
+308495,Viipurintie-Ajurinkatu keskustaan
+308496,Viipurintie-Ajurinkatu keskustasta
+308497,Merenlahdentie 217 keskustasta
+308768,Transpoint E
+308769,Ravirata E
+308772,Ravirata P
+308773,Transpoint P
+309088,VP-Kuljetus I
+309089,VP-Kuljetus L
+309090,Portsilta I
+309091,Vesivalo th L
+309269,Imatran keskusliikenneasema I
+309519,Imatrantie-Kaukaankatu keskustasta
+309670,Konnunsuo VOK 1
+309671,Kivisaari 1
+309678,Kotasaarentie 2
+309679,Kotasaarentie 1
+309680,Konnunsuo 2
+309681,Kivisaari 2
+309682,Partalantie  Kähärilän th 1
+309684,Haukilahti  Rantasen varikko_1
+309687,Leppälä  Suokumaantie th 2
+309689,Suokumaa  Lipiäläntie th 2
+309693,Pienpällinkatu keskustaan
+309694,Isopällinkatu keskustaan
+309695,Itäinen kanavatie keskustaan
+309696,Suokumaantie 471 1
+309699,Kuurmanpohjan koulu 2
+309701,Kuurmanpohja 2
+309703,Vesala 2
+309705,Vesikkola 2
+309706,Perä-Ahola 1
+309709,Ahola  Salontien th 2
+309710,Pienmäentie risteys 1
+309712,Mentulantie 1
+309713,Mentulantie 2
+309714,Räätälintien risteys 1
+309715,Räätälintien risteys 2
+309716,Soskuantien risteys 1
+309717,Soskuantien risteys 2
+309718,Hiekkastentien risteys 1
+309722,Tuohimäentien risteys 2
+309723,Korkea-ahontie 892 1
+309725,Korkea-ahontie 1190 1
+309726,Korkea-ahontie 1190 2
+309727,Tanin lähtöpysäkki_1
+309729,Kukkola 1
+309730,Kukkola 2
+309732,Murtola 2
+309733,Kosenmäki 1
+309765,Melkkola_1
+309766,Melkkola_2
+309767,Korkea-aho 1
+309768,Korkea-aho 2
+309770,Ravattila 2
+309777,Vanha Mikkelintie 10 keskustasta
+309778,Vanha Mikkelintie 10 keskustaan
+309779,Vanha Rutolantie 90 keskustasta
+309780,Vanha Mikkelintie 90 keskustaan
+309781,Vanha Mikkelintie 125 keskustasta
+309782,Vanha Mikkelintie 125 keskustaan
+309952,Asentajantie Joutsenoon
+309953,Keskuskatu/Annukantie Joutsenoon
+309954,Keskuskatu/Annukantie Joutsenosta
+309955,Keskuskatu 12 Joutsenoon
+309956,Keskuskatu 12 Joutsenosta
+309957,Teollisuustie/Lappeenkatu
+309964,Simolantie_keskustasta
+309965,Pulsa
+310014,Vainikkala RAS
+310107,Simolantie keskustaan
+310200,Asemansuora
+310681,Jäähalli
+310698,Sarvijoentie 72
+310699,Haikalantie 194
+310700,Haikala_2
+310702,Villala
+310703,Hyttilä
+310715,Kaipiantie/Ruohiantie
+310716,Marttila
+310823,Lavolantie 2 E
+310824,Lavolantie 14 E
+313603,Onninkatu 27 keskustaan
+313604,Onninkatu 27 keskustasta
+313605,Eteläkatu/Onninkatu keskustaan
+313606,Eteläkatu/Onninkatu keskustasta
+314105,Karhuvuorenkatu 20 keskustasta
+314106,Karhuvuorenkatu keskustasta
+314107,Karhuvuorenkatu 17 keskustasta
+314108,Karhuvuori keskustasta
+314203,Kaarelankatu keskustasta
+314204,Pellavakatu_keskustasta
+314700,Pontuksen koulu I
+314701,Pontuksen koulu L
+314702,Savikannantie 3
+314705,Perä-Meltola
+314708,Hietalankatu 3
+314709,Hietalankatu 21
+314723,Mellonmäki
+314724,Liisanpuisto
+314802,Savikannantie 199
+314803,Savikannantie 3
+314807,Joutsenonkatu 71
+314811,Vallinkoskentie 111
+314920,Meltolantie 1
+314921,Mellonmäki
+314923,Keskuskatu-Linnalankatu P
+315000,Keskuskatu-Linnalankatu E
+315226,Lammassaarentie 12 E
+315227,Lammassaarentie 12 P
+319720,Voisalmentie-Kivirannankatu
+323623,Helsingintie-Suonionkatu keskustaan
+327418,Rutola
+328220,Lavolantie 55 E
+328222,Tilsalankatu-Patterikatu P
+328223,Tilsalankatu-Pakkikatu P
+328316,Tilsalankatu-Kiviesteenkatu P
+329520,Lavolantie 30 E
+336017,Keskusasema P
+336018,Keskusasema E
+336117,Ratamokatu 6
+336118,Ratamokatu 9
+336119,Ratamokatu 11
+336217,Honkaharju
+336317,Kartanonkatu
+337017,Pakkaskatu
+337221,Ratamokatu
+340832,Puronotko E
+340833,Korvenkannantie 1 P
+341017,Paperharjuntie 41
+341018,Korvenkannantie 10 E
+341126,Puronotko P
+343817,Mansikkalan koulukeskus I
+343818,Mansikkalan koulukeskus L
+346320,Saratie keskustaan
+353128,Kosken koulukeskus P
+353171,Itäsiitola uusi P
+355111,Tietäjänkatu 3 P
+355112,Tietäjänkatu 3 E
+357619,Ravonsydän
+362517,Lavolankatu-Puhakankatu keskustasta
+366417,Korkea-ahon koulu
+366548,Oleksi
+366729,Viipurintie 340 E
+366730,Viipurintie 437 E
+366731,Viipurintie 587 E
+367524,Hytintie
+370395,Viipurintie 84 E
+370396,Viipurintie 88 E
+370397,Viipurintie 112 E
+370398,Viipurintie 769 E
+370399,Räikköläntie 360 P
+372711,Räikköläntie 428
+372729,Vallikoskentie 390
+372730,Vallinkoskentie 336
+372731,Vallinkoskentie 291
+372732,Vallinkoskentie 171
+373736,Veteraanipuisto P
+373737,Pellonreuna P
+373738,Itä-Siitola
+373739,Itä-Siitola 2
+373740,Vuoksenniskantie 1 P
+373741,Sienimäenranta P
+393019,Salpausselänkatu L
+393218,Salpausselänkatu I
+406117,Sienimäenranta E
+406127,Itäsiitola 2 E
+406128,Itäsiitola E
+406129,Pellonreuna E
+406130,Veteraanipuisto E
+406132,Koskenkoulu E
+406151,Räikköläntie 252P
+406154,Vallinkoskentie 29P
+406155,Meltolan koulu P
+408718,Nuijamaa
+430318,Lappeen koulu
+441218,Linjatie P
+441219,Linjatie E
+441718,Niittyvillantie L
+449819,Rauhantie P
+449918,Jänhiäläntie I
+450018,Jänhiäläntie L
+450118,Rauhantie E
+471618,Joutsenon koulu
+483820,Vainikkala Ojala
