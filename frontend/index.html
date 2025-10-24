@@ -1,87 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>QRBus – Live Board</title>
-<style>
-body{font-family:sans-serif;background:#fafafa;color:#222;max-width:620px;margin:1rem auto}
-h2{text-align:center;font-size:1.4rem;margin:.3rem 0}
-#veh{font-size:.9rem;text-align:center;margin-bottom:.6rem;color:#444}
-ul{list-style:none;padding:0;margin:0}
-li.route{display:grid;grid-template-columns:4rem 1fr auto;gap:.5rem;padding:.45rem 0;border-bottom:1px dotted #ccc;cursor:pointer;font-size:1.05rem}
-li.route:hover{background:#eff6ff}
-.line{font-weight:600;text-align:right}
-.mins{font-variant-numeric:tabular-nums;font-weight:600}
-.live .mins{color:#007500}
-.stops{padding:.4rem .5rem .6rem 4rem;font-size:.95rem;line-height:1.3;display:none;border-left:3px solid #2878ff;background:#f7faff;margin-bottom:.5rem}
-.stops span{display:block}
-.passed{text-decoration:line-through;color:#888}
-.current{font-weight:700;color:#d00000}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QRBus</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 2em;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 0.5em;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 1em;
+    }
+    li {
+      padding: 0.4em;
+      font-size: 1.4em;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: #eee;
+    }
+    .line {
+      font-weight: bold;
+    }
+    #map {
+      height: 300px;
+      margin-top: 1.5em;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>
-<h2 id="stopName">Loading…</h2>
-<div id="veh"></div>
-<ul id="board"></ul>
+  <h1 id="stopName">Loading…</h1>
+  <div id="status">⏳ Loading departures...</div>
+  <ul id="times"></ul>
+  <div id="map"></div>
 
-<script>
-/**************** CONFIG ****************/
-const params = new URLSearchParams(location.search);
-const stopId = params.get('id') || 'Lappeenranta:205390';
-const dev    = location.hostname==='localhost'||location.hostname==='127.0.0.1';
-const apiRoot= dev? 'http://127.0.0.1:5000' : location.origin;
-const routeMap={'1':'Lappeenranta:1','1X':'Lappeenranta:1X','2':'Lappeenranta:2','3':'Lappeenranta:3','4':'Lappeenranta:4','5':'Lappeenranta:5','6':'Lappeenranta:6','7':'Lappeenranta:7','8':'Lappeenranta:8'};
-/**************** HELPERS **************/
-const norm=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();
-const city=s=>/^([1-8][A-Za-z]?)$/.test(s||'');
-const minsUntil=(d,s)=>Math.floor(((d+s)-Math.floor(Date.now()/1000))/60);
-const jq=async(u,o)=>{const r=await fetch(u,o||{});if(!r.ok)throw r;return r.json();};
-async function veh(routeId){try{return (await jq(`${apiRoot}/api/route/${routeId}/vehicles`))[0]||null;}catch{return null;}}
-/**************** DOM refs *************/
-const stopNameEl=document.getElementById('stopName');
-const vehDiv=document.getElementById('veh');
-const board=document.getElementById('board');
-/**************** MAIN LOOP ************/
-async function load(){
-  let data;try{data=await jq(`${apiRoot}/api/stop/${encodeURIComponent(stopId)}`);}catch{stopNameEl.textContent='Error';return;}
-  stopNameEl.textContent=data.name;
-  const kw=norm(data.name.split(/[- ]/).pop());
-  const groups={};
-  data.stoptimesWithoutPatterns.forEach(st=>{
-    const sn=st.trip.route.shortName;if(!city(sn))return;
-    const head=st.trip.tripHeadsign||'';if(norm(head).includes(kw))return;
-    const m=minsUntil(st.serviceDay,st.realtime?st.realtimeArrival:st.scheduledArrival);
-    if(m<0||m>120)return;
-    const k=sn+'|'+head+'|'+st.stopPositionInPattern;
-    (groups[k]=groups[k]||[]).push({...st,mins:m});
-  });
-  board.innerHTML='';vehDiv.textContent='';
-  for(const [k,arr] of Object.entries(groups)){
-    arr.sort((a,b)=>a.stopPositionInPattern-b.stopPositionInPattern||a.mins-b.mins);
-    const f=arr[0];
-    const minsText = arr.slice(0, 3).map(x => {const isLive = x.realtime || (x.realtimeArrival !== x.scheduledArrival);
-    const icon = isLive ? '⚡' : '⏰';return `${x.mins} ${icon}`;}).join(', ');
-    const li=document.createElement('li');li.className='route'+(f.realtime?' live':'');
-    li.innerHTML=`<span class="line">${f.trip.route.shortName}</span><span class="dest">${f.trip.tripHeadsign}</span><span class="mins">${minsText}</span>`;
-    board.appendChild(li);
-    const sdiv=document.createElement('div');sdiv.className='stops';board.appendChild(sdiv);
-    li.addEventListener('click',()=>toggleStops(f.trip.route.shortName,sdiv));
-    // vehicle status async
-    (async()=>{const rid=routeMap[f.trip.route.shortName];if(!rid)return;const v=await veh(rid);vehDiv.textContent=v?`🚌  Bus now: ${v.stopRelationship.status.replace('_',' ').toLowerCase()} ${v.stopRelationship.stop.name}`:'⏳  No vehicle on route yet';})();
-  }
-}
-/**************** Stops View ***********/
-async function toggleStops(sn,div){
-  if(div.dataset.ld){div.style.display=div.style.display==='none'?'block':'none';return;}
-  const rid=routeMap[sn];if(!rid){div.textContent='No route data';return;}
-  const stops=await jq(`${apiRoot}/api/route/${rid}/stops`);
-  stops.forEach(s=>{const sp=document.createElement('span');sp.id=s.gtfsId;sp.textContent='• '+s.name;div.appendChild(sp);} );
-  div.dataset.ld=true;div.style.display='block';markProgress(rid);
-}
-async function markProgress(rid){const v=await veh(rid);if(!v)return;const cur=v.stopRelationship.stop.gtfsId;document.querySelectorAll(`#${CSS.escape(cur)}`).forEach(e=>e.classList.add('current'));let reached=false;document.querySelectorAll('.stops span').forEach(sp=>{if(sp.id===cur)reached=true;if(!reached)sp.classList.add('passed');});}
-/**************** Init ***************/
-load();setInterval(load,30000);
-</script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    const stopId = new URLSearchParams(location.search).get("id") || "Lappeenranta:205390";
+    const apiRoot = "http://127.0.0.1:5000";
+
+    let map = L.map("map").setView([61.06, 28.1], 13);
+    let routeLayer = null, busMarker = null;
+    map.addLayer(L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"));
+    document.getElementById("map").style.display = "none";
+
+    function formatTime(mins, live) {
+      if (mins <= 20) return `${mins} ${live ? "⚡" : "⏰"}`;
+      const future = new Date(Date.now() + mins * 60000);
+      const hh = future.getHours().toString().padStart(2, '0');
+      const mm = future.getMinutes().toString().padStart(2, '0');
+      return `${hh}:${mm} 🕒`;
+    }
+
+    function groupByLine(data) {
+      const map = {};
+      data.forEach(({ line, head, mins, live }) => {
+        const key = `${line} → ${head}`;
+        if (!map[key]) map[key] = [];
+        map[key].push({ mins, live });
+      });
+      return map;
+    }
+
+    async function loadStop() {
+      try {
+        const res = await fetch(`${apiRoot}/api/stop/${encodeURIComponent(stopId)}`);
+        if (!res.ok) throw new Error(await res.text());
+        const data = await res.json();
+
+        document.getElementById("stopName").textContent = data.name;
+        const now = Math.floor(Date.now() / 1000);
+        const norm = s => s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const stopNorm = norm(data.name);
+        const list = [];
+
+        data.stoptimesWithoutPatterns.forEach(st => {
+          const sn = st.trip.route.shortName;
+          const head = st.trip.tripHeadsign || "";
+          const headNorm = norm(head);
+          const arrSec = st.realtime ? st.realtimeArrival : st.scheduledArrival;
+          const mins = Math.floor((st.serviceDay + arrSec - now) / 60);
+          if (mins < 0 || mins > 120) return;
+          if (
+            (stopNorm.includes("yliopisto") && headNorm.includes("yliopisto")) ||
+            (stopNorm.includes("matkakeskus") && headNorm.includes("matkakeskus"))
+          ) return;
+          list.push({ line: sn, head, mins, live: st.realtime });
+        });
+
+        const grouped = groupByLine(list);
+        const ul = document.getElementById("times");
+        ul.innerHTML = "";
+        Object.entries(grouped).forEach(([key, arr]) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<span class="line">${key}</span> — ` +
+            arr.sort((a,b)=>a.mins-b.mins).map(v => formatTime(v.mins, v.live)).join(", ");
+
+          li.onclick = () => {
+            const shortName = key.split(" → ")[0];
+            const stop = encodeURIComponent(stopId);
+            window.open(`map.html?route=${shortName}&stop=${stop}`, "_blank");
+          };
+
+          ul.appendChild(li);  // ← sadece burada çağrılmalı
+        });
+        document.getElementById("status").textContent = list.length
+          ? ""
+          : "⏳ No vehicle on route yet";
+      } catch (err) {
+        document.getElementById("stopName").textContent = "Error";
+        document.getElementById("status").textContent = "🛑 Could not load stop data";
+        console.error(err);
+      }
+    }
+
+    async function showRoute(shortName) {
+      const routeId = `Lappeenranta:${shortName}`;
+      try {
+        const res = await fetch(`${apiRoot}/api/route/${routeId}/stops`);
+        if (!res.ok) throw new Error(await res.text());
+        const stops = await res.json();
+        if (!stops.length) return;
+
+        if (routeLayer) map.removeLayer(routeLayer);
+        if (busMarker) map.removeLayer(busMarker);
+        const latlngs = stops.map(s => [s.lat, s.lon]);
+        routeLayer = L.polyline(latlngs, { color: "blue", weight: 5 }).addTo(map);
+        map.fitBounds(routeLayer.getBounds());
+        document.getElementById("map").style.display = "block";
+
+        const resVeh = await fetch(`${apiRoot}/api/route/${routeId}/vehicles`);
+        const vehicles = await resVeh.json();
+        if (vehicles.length) {
+          const v = vehicles[0];
+          busMarker = L.marker([v.lat, v.lon]).addTo(map);
+        }
+      } catch (err) {
+        console.error("Show route error", err);
+      }
+    }
+
+    loadStop();
+    setInterval(loadStop, 30000);
+  </script>
+<div style="margin-top: 2em;">
+  <a href="https://waltti.fi/en/" target="_blank" rel="noopener" style="font-size: 1.1em; text-decoration: none; color: #0077cc;">
+    💳 Check or top up your Waltti card · Tarkista tai lataa Waltti-korttisi
+  </a>
+</div>
 </body>
 </html>

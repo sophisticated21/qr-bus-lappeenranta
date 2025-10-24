@@ -62,9 +62,20 @@ const norm = txt =>
 
 const isCityLine = sn => /^[1-8][A-Za-z]?$/.test(sn || "");
 
-function minsUntil(serviceDay, sec) {
-  const diff = (serviceDay + sec) - Math.floor(Date.now() / 1000);
-  return Math.floor(diff / 60);
+/* yeni: zaman biçimlendirme */
+function formatArrival(serviceDay, secondsFromMidnight) {
+  const arrivalTimestamp = (serviceDay + secondsFromMidnight) * 1000;
+  const now = Date.now();
+  const diffMinutes = Math.round((arrivalTimestamp - now) / (1000 * 60));
+
+  if (diffMinutes <= 0) return "⏳ now";
+  else if (diffMinutes <= 20) return `⏱ ${diffMinutes} min`;
+  else {
+    const date = new Date(arrivalTimestamp);
+    const hh = date.getHours().toString().padStart(2, "0");
+    const mm = date.getMinutes().toString().padStart(2, "0");
+    return `🕒 ${hh}:${mm}`;
+  }
 }
 
 /* --------------- DOM refs ---------------------- */
@@ -86,7 +97,7 @@ async function loadStop() {
     stopNameEl.textContent = data.name;
     if (data.lat && data.lon) map.setView([data.lat, data.lon], 14);
 
-    const stopNorm = norm(data.name);  // e.g. lut-yliopisto → "yliopisto"
+    const stopNorm = norm(data.name);
     const now = Math.floor(Date.now() / 1000);
     const list = [];
     const liveLines = new Set();
@@ -98,7 +109,7 @@ async function loadStop() {
 
       if (!isCityLine(sn)) return;
 
-      // yön filtreleme: geliş yönündeki araçları atla
+      // yön filtreleme
       if (
         (stopNorm.includes("yliopisto") && headNorm.includes("yliopisto")) ||
         (stopNorm.includes("matkakeskus") && headNorm.includes("matkakeskus"))
@@ -108,14 +119,22 @@ async function loadStop() {
       const mins   = Math.floor((st.serviceDay + arrSec - now) / 60);
       if (mins < 0 || mins > 120) return;
 
-      list.push({ line: sn, head, mins, live: st.realtime });
+      list.push({
+        line: sn,
+        head,
+        mins,
+        seconds: arrSec,
+        serviceDay: st.serviceDay,
+        live: st.realtime
+      });
+
       liveLines.add(sn);
     });
 
     list.sort((a, b) => a.mins - b.mins);
     renderList(list);
 
-    // araç pinini haritada göster
+    // ilk aracı haritada göster
     const firstLine = list[0]?.line;
     if (firstLine && routeMap[firstLine]) loadVehicles(routeMap[firstLine]);
   } catch (err) {
@@ -129,7 +148,8 @@ function renderList(arr) {
   arr.forEach(v => {
     const li = document.createElement("li");
     li.className = v.live ? "live" : "plan";
-    li.textContent = `${v.line} → ${v.head} — ${v.mins} min ${v.live ? "⚡" : "⏰"}`;
+    const formattedTime = formatArrival(v.serviceDay, v.seconds);
+    li.textContent = `${v.line} → ${v.head} — ${formattedTime}`;
     listEl.appendChild(li);
   });
 }
@@ -141,7 +161,7 @@ async function loadVehicles(routeId) {
     const list = await res.json();
     if (!list.length) return;
 
-    const v = list[0];  // ilk aracı göster
+    const v = list[0];
     if (!busPin)
       busPin = L.marker([v.lat, v.lon]).addTo(map);
     else

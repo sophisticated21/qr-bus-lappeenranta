@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Route Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+  <style>
+    html, body, #map { height: 100%; margin: 0; padding: 0; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const shortName = params.get("route");
+    const stopId = params.get("stop");
+    const apiRoot = "http://127.0.0.1:5000";
+
+    let map = L.map("map").setView([61.06, 28.1], 13);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png").addTo(map);
+
+    async function showRoute() {
+      const routeId = `Lappeenranta:${shortName}`;
+      const res = await fetch(`${apiRoot}/api/route/${routeId}/stops`);
+      const stops = await res.json();
+      if (!stops.length) return;
+      const latlngs = stops.map(s => [s.lat, s.lon]);
+      const line = L.polyline(latlngs, { color: "blue", weight: 5 }).addTo(map);
+      map.fitBounds(line.getBounds());
+
+      const resVeh = await fetch(`${apiRoot}/api/route/${routeId}/vehicles`);
+      const vehicles = await resVeh.json();
+      if (vehicles.length) {
+        const v = vehicles[0];
+        L.marker([v.lat, v.lon]).addTo(map);
+      }
+    }
+
+    showRoute();
+  </script>
+</body>
+</html>
