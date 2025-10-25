@@ -10,7 +10,7 @@ const stopId  = params.get("id") || "Lappeenranta:205390";
 const localDev = location.hostname === "localhost" || location.hostname === "127.0.0.1";
 const apiRoot  = localDev ? "http://127.0.0.1:5000" : location.origin;
 
-/* quick map from shortName to full route gtfsId (city lines only) */
+/* quick map from shortName to full route gtfsId */
 const routeMap = {
   "1": "Lappeenranta:1",
   "1X": "Lappeenranta:1X",
@@ -62,7 +62,7 @@ const norm = txt =>
 
 const isCityLine = sn => /^[1-8][A-Za-z]?$/.test(sn || "");
 
-/* yeni: zaman biçimlendirme */
+/* --------------- time formatting---------------  */
 function formatArrival(serviceDay, secondsFromMidnight) {
   const arrivalTimestamp = (serviceDay + secondsFromMidnight) * 1000;
   const now = Date.now();
@@ -109,7 +109,7 @@ async function loadStop() {
 
       if (!isCityLine(sn)) return;
 
-      // yön filtreleme
+      // direction filter
       if (
         (stopNorm.includes("yliopisto") && headNorm.includes("yliopisto")) ||
         (stopNorm.includes("matkakeskus") && headNorm.includes("matkakeskus"))
@@ -134,7 +134,7 @@ async function loadStop() {
     list.sort((a, b) => a.mins - b.mins);
     renderList(list);
 
-    // ilk aracı haritada göster
+    // show first line
     const firstLine = list[0]?.line;
     if (firstLine && routeMap[firstLine]) loadVehicles(routeMap[firstLine]);
   } catch (err) {
@@ -173,4 +173,4 @@ async function loadVehicles(routeId) {
 
 /* --------------- start ------------------------- */
 loadStop();
-setInterval(loadStop, 30000);  // her 30 sn'de bir güncelle
+setInterval(loadStop, 30000);  // update every 30 seconds

@@ -18,7 +18,7 @@ with open(input_file, encoding="utf-8") as f:
         except Exception as e:
             print(f"{gtfs_id} -> Hata: {e}")
             stop_map[gtfs_id] = None
-        time.sleep(0.1)  # fazla yüklenmeyelim
+        time.sleep(0.1)  
 
 with open("live_stop_names.json", "w", encoding="utf-8") as out:
     json.dump(stop_map, out, ensure_ascii=False, indent=2)

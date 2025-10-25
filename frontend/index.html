@@ -4,47 +4,85 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>QRBus</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#ffffff" />
+  <link rel="apple-touch-icon" href="bus-icon-192.png" />
   <style>
     body {
       font-family: sans-serif;
-      background: #f9f9f9;
+      background: #f2f2f2;
       margin: 0;
       padding: 2em;
       text-align: center;
     }
+
     h1 {
       margin-bottom: 0.5em;
+      font-size: 1.5em;
+      color: #333;
     }
+
     ul {
       list-style: none;
-      padding: 0;
-      margin-top: 1em;
+      padding: 1em;
+      margin: auto;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
     }
+
     li {
       padding: 0.4em;
-      font-size: 1.4em;
+      font-size: 1.3em;
       cursor: pointer;
     }
+
     li:hover {
-      background-color: #eee;
+      background-color: #f7f7f7;
     }
+
     .line {
       font-weight: bold;
     }
+
     #map {
       height: 300px;
       margin-top: 1.5em;
       border-radius: 8px;
       display: none;
     }
+
+    #waltti {
+      margin-top: 1.5em;
+      font-size: 0.9em;
+    }
+
+    #waltti a {
+      text-decoration: none;
+      color: #007aff;
+      margin: 0 4px;
+    }
+
+    #waltti a:hover {
+      text-decoration: underline;
+    }
+
+    
     @media (max-width: 600px) {
       body {
         padding: 1em;
       }
+
+      ul {
+        padding: 1em;
+      }
+
       li {
         font-size: 1.1em;
         padding: 0.3em;
       }
+
       h1 {
         font-size: 1.3em;
       }
@@ -126,7 +164,7 @@
             window.open(`map.html?route=${shortName}&stop=${stop}`, "_blank");
           };
 
-          ul.appendChild(li);  // ← sadece burada çağrılmalı
+          ul.appendChild(li);  
         });
         document.getElementById("status").textContent = list.length
           ? ""
