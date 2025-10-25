@@ -99,7 +99,7 @@
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script>
     const stopId = new URLSearchParams(location.search).get("id") || "Lappeenranta:205390";
-    const apiRoot = "http://127.0.0.1:5000";
+    const apiRoot = "https://qr-bus-lappeenranta.onrender.com";
 
     let map = L.map("map").setView([61.06, 28.1], 13);
     let routeLayer = null, busMarker = null;
