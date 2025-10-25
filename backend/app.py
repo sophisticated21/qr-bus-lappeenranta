@@ -8,10 +8,9 @@ env_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.env')
 load_dotenv(dotenv_path=env_path)
 
 API_KEY = os.getenv("WALTTI_KEY")
-print("🟡 WALTTI_KEY =", API_KEY)
 
 if not API_KEY:
-    raise RuntimeError("❌ WALTTI_KEY bulunamadı. .env dosyasını kontrol et.")
+    raise RuntimeError("❌ IP Key issue!")
 
 API_URL = "https://api.digitransit.fi/routing/v2/waltti/gtfs/v1"
 HEADERS = {
@@ -37,9 +36,9 @@ def gql(query: str):
 
 # ------------------ Flask App ------------------
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})  # tüm frontendler erişebilsin
+CORS(app, resources={r"/api/*": {"origins": "*"}})  
 
-# ------------------ 1. Durak Verisi ------------------
+# ------------------ 1. Stops Data ------------------
 @app.get("/api/stop/<gtfs_id>")
 def stop(gtfs_id):
     now = time.time()
@@ -62,7 +61,7 @@ def stop(gtfs_id):
         app.logger.warning("stop gql error: %s", e)
         return jsonify({"error": "backend"}), 502
 
-# ------------------ 2. Canlı Araçlar ------------------
+# ------------------ 2. Live vehicles ------------------
 @app.get("/api/route/<gtfs_id>/vehicles")
 def route_vehicles(gtfs_id):
     now = time.time()
@@ -90,7 +89,7 @@ def route_vehicles(gtfs_id):
         app.logger.warning("vehicle gql error: %s", e)
         return jsonify([])
 
-# ------------------ 3. Durak Listesi ------------------
+# ------------------ 3.Stops list ------------------
 @app.get("/api/route/<gtfs_id>/stops")
 def route_stops(gtfs_id):
     query = f'''{{ route(id:"{gtfs_id}") {{
@@ -112,6 +111,7 @@ def route_stops(gtfs_id):
         app.logger.warning("route_stops error: %s", e)
         return jsonify([])
 
-# ------------------ Çalıştır ------------------
+# ------------------ Run ------------------
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
